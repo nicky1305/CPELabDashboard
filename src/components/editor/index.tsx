@@ -2,11 +2,11 @@
 import "@/utils/highlight";
 import { useSettings } from "@/store/settingStore";
 import { useThemeToken } from "@/theme/hooks";
-import ReactQuill, { type ReactQuillProps } from "react-quill";
+import ReactQuill from 'react-quill-new';
 import { StyledEditor } from "./styles";
 import Toolbar, { formats } from "./toolbar";
 
-interface Props extends ReactQuillProps {
+interface Props extends ReactQuill.ReactQuillProps {
 	sample?: boolean;
 }
 export default function Editor({

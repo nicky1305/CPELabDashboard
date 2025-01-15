@@ -37,9 +37,9 @@ export default function ContainerView({ isText, variant, isMulti }: Props) {
 				</MotionContainer>
 			) : (
 				<MotionContainer className="flex flex-col items-center gap-6">
-					{imgs.map((img) => (
+					{imgs.map((img, i) => (
 						<m.img
-							key={img}
+							key={i}
 							src={img}
 							style={{
 								objectFit: "cover",

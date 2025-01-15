@@ -12,11 +12,11 @@ export default function EditorPage() {
 	return (
 		<>
 			<Typography.Link
-				href="https://github.com/zenoamaro/react-quill"
+				href="https://github.com/zenoamaro/react-quill-new"
 				style={{ color: colorPrimary }}
 				className="mb-4 block"
 			>
-				https://github.com/zenoamaro/react-quill
+				https://github.com/zenoamaro/react-quill-new
 			</Typography.Link>
 			<Card title="Editor Simple">
 				<Editor

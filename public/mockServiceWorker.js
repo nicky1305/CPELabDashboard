@@ -8,17 +8,13 @@
  * - Please do NOT serve this file on production.
  */
 
-const PACKAGE_VERSION = '2.6.4'
-const INTEGRITY_CHECKSUM = 'ca7800994cc8bfb5eb961e037c877074'
+const PACKAGE_VERSION = '2.7.0'
+const INTEGRITY_CHECKSUM = '00729d72e3b82faf54ca8b9621dbb96f'
 const IS_MOCKED_RESPONSE = Symbol('isMockedResponse')
 const activeClientIds = new Set()
 
-// console.log(`running: "mockSerivceWorker.js"`)
-// var that = self;
-
 self.addEventListener('install', function () {
-  self.skipWaiting();
-  // console.log(`[msw]: "mockSerivceWorker.js => install()"`)
+  self.skipWaiting()
 })
 
 self.addEventListener('activate', function (event) {
@@ -26,9 +22,6 @@ self.addEventListener('activate', function (event) {
 })
 
 self.addEventListener('message', async function (event) {
-  // console.log(`[msw]: "mockSerivceWorker.js => message()"`)
-  // console.log(that)
-
   const clientId = event.source.id
 
   if (!clientId || !self.clients) {
@@ -206,7 +199,19 @@ async function getResponse(event, client, requestId) {
     // Remove the "accept" header value that marked this request as passthrough.
     // This prevents request alteration and also keeps it compliant with the
     // user-defined CORS policies.
-    headers.delete('accept', 'msw/passthrough')
+    const acceptHeader = headers.get('accept')
+    if (acceptHeader) {
+      const values = acceptHeader.split(',').map((value) => value.trim())
+      const filteredValues = values.filter(
+        (value) => value !== 'msw/passthrough',
+      )
+
+      if (filteredValues.length > 0) {
+        headers.set('accept', filteredValues.join(', '))
+      } else {
+        headers.delete('accept')
+      }
+    }
 
     return fetch(requestClone, { headers })
   }
