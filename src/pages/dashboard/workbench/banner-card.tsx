@@ -24,48 +24,6 @@ export default function BannerCard() {
 			<Col
 				span={24}
 				md={12}
-				xl={16}
-				className="flex-1 text-center md:text-left"
-			>
-				<div
-					className="mt-4 text-lg font-semibold md:text-xl"
-					style={{ color: themeToken.colorPrimaryActive }}
-				>
-					<h4>Welcome back 👋 </h4>
-					<h4>{username}</h4>
-				</div>
-				<div
-					style={{ color: themeToken.colorPrimaryTextActive }}
-					className="mx-auto mb-6 mt-4 max-w-sm text-sm opacity-80 md:mx-0"
-				>
-					Welcome to join the Discord channel to discuss everything about Slash
-					Admin, or you can visite my blog:
-					<div>
-						<a
-							href="https://blog.slashspaces.com"
-							target="_blank"
-							className="text-base opacity-80"
-							style={{ color: themeToken.colorPrimaryTextActive }}
-							rel="noreferrer"
-						>
-							👉 https://blog.slashspaces.com
-						</a>
-					</div>
-				</div>
-				<button
-					type="button"
-					className="font-mediumtext-black m-auto flex items-center justify-center rounded-lg px-2 py-1 shadow-none md:m-0"
-					style={{ backgroundColor: themeToken.colorPrimary, color: "#fff" }}
-					onClick={() => window.open("https://discord.gg/fXemAXVNDa")}
-				>
-					<Iconify icon="carbon:logo-discord" size={24} />
-					<span className="ml-2 font-black">Join Discord</span>
-				</button>
-			</Col>
-
-			<Col
-				span={24}
-				md={12}
 				xl={8}
 				className="!md:max-w-[320px] mx-auto !max-w-[270px] flex-none items-center justify-center "
 			>
@@ -287,7 +245,7 @@ function BannerSvg() {
 					<stop offset="1" stopColor={colorPrimaryActive} />
 				</linearGradient>
 			</defs>
-			<image href={Character3} height="300" x="312" y="30" />
+			<image href={Character3} height="300" x="312" y="0" />
 		</svg>
 	);
 }

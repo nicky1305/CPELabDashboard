@@ -6,6 +6,7 @@ import { getStringItem } from "@/utils/storage";
 
 import en_US from "./lang/en_US";
 import zh_CN from "./lang/zh_CN";
+import vi_VN from "./lang/vi_VN";
 
 import { LocalEnum, StorageEnum } from "@/type/enum";
 
@@ -29,6 +30,7 @@ i18n
 		resources: {
 			en_US: { translation: en_US },
 			zh_CN: { translation: zh_CN },
+			vi_VN: { translation: vi_VN },
 		},
 	});
 

@@ -10,19 +10,19 @@ import Toast from "./components/toast";
 
 function App() {
 	return (
-		<AntdConfig>
-			<AntdApp>
-				<MotionLazy>
-					<Helmet>
-						<title>Slash Admin</title>
-						<link rel="icon" href={Logo} />
-					</Helmet>
-					<Toast />
-					<Router />
-				</MotionLazy>
-			</AntdApp>
-		</AntdConfig>
-	);
+    <AntdConfig>
+      <AntdApp>
+        <MotionLazy>
+          <Helmet>
+            <title>CPE LAB Dashboard</title>
+            <link rel="icon" type="image/png" href={Logo} />
+          </Helmet>
+          <Toast />
+          <Router />
+        </MotionLazy>
+      </AntdApp>
+    </AntdConfig>
+  );
 }
 
 export default App;
